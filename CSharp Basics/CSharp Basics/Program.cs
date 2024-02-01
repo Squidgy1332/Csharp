@@ -20,7 +20,10 @@ namespace CSharp_Basics
         static void Main(string[] args){
             //control variable
             int CV = 10;
-
+            //chat used to store single keyboard input
+            char = 'a';
+            //double is used to store large floats
+            double = 0.0;
             string userInput;
             //list of people and pets
             List<Pets> allPets = new List<Pets>();
