@@ -18,6 +18,7 @@ namespace MP3_Player
     public partial class MainWindow : Window
     {
         OpenFileDialog FileExplorer = new OpenFileDialog();
+        TagLib.File CurrentFile;
         public MainWindow()
         {
             InitializeComponent();
@@ -25,7 +26,7 @@ namespace MP3_Player
 
         private void FBrowse_Click(object sender, RoutedEventArgs e)
         {
-            FileExplorer.Filter = "wav and mp3 Files|*.wav;*.mp3";
+            FileExplorer.Filter = "mp3 Files|*.mp3";
 
             // Open up the users home directory when opened
             FileExplorer.InitialDirectory = System.Environment.GetEnvironmentVariable("USERPROFILE");
@@ -35,6 +36,7 @@ namespace MP3_Player
             if (FileExplorer.CheckFileExists && FileExplorer.CheckPathExists)
             {
                 F_Path.Text = FileExplorer.FileName;
+                CurrentFile = TagLib.File.Create(FileExplorer.FileName);
             }
         }
         private void PlayB_Click(object sender, RoutedEventArgs e)

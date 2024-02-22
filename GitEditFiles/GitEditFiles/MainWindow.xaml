@@ -1,0 +1,21 @@
+﻿<Window x:Class="GitEditFiles.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GitEditFiles"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid x:Name="NLabel">
+        <TextBox x:Name="TxtE" HorizontalAlignment="Left" Margin="141,188,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="312" Height="29"/>
+        <TextBox x:Name="TxtN" HorizontalAlignment="Left" Margin="141,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="312" Height="28"/>
+        <Button x:Name="BtnC" Content="Change" HorizontalAlignment="Left" Margin="379,240,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.123,-1.22" Height="28" Width="74"/>
+        <TextBox x:Name="TxtF" HorizontalAlignment="Left" Margin="141,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="312" Height="27" AutomationProperties.HelpText="FilePath" ToolTip=""/>
+        <Button x:Name="BtnF" Content="..." HorizontalAlignment="Left" Margin="473,72,0,0" VerticalAlignment="Top" Height="25" Width="55" Click="BtnF_Click"/>
+        <Label x:Name="FLabel" HorizontalAlignment="Left" Margin="59,74,0,0" VerticalAlignment="Top" Height="25" Width="77" Content="Repository"/>
+        <Label HorizontalAlignment="Left" Margin="59,125,0,0" VerticalAlignment="Top" Content="UserName"/>
+        <Label x:Name="ELabel" HorizontalAlignment="Left" Margin="62,191,0,0" VerticalAlignment="Top" Content="Email"/>
+        <CheckBox x:Name="Checkbox" Content="Edit Global Git" HorizontalAlignment="Left" Margin="141,27,0,0" VerticalAlignment="Top" Height="25" Width="184"/>
+        <Button x:Name="BtnS" Content="Save" HorizontalAlignment="Left" Margin="141,240,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.123,-1.22" Height="28" Width="74"/>
+    </Grid>
+</Window>
