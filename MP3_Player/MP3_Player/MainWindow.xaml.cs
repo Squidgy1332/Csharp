@@ -42,6 +42,8 @@ namespace MP3_Player
         private void PlayB_Click(object sender, RoutedEventArgs e)
         {
             var Pwindow = new Window1(FileExplorer.FileName);
+            var Ewindow = new EditData(FileExplorer.FileName);
+            Ewindow.Show();
             Pwindow.Show();
         }
 

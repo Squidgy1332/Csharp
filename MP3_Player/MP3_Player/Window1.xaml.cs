@@ -16,6 +16,7 @@ namespace MP3_Player
     /// <summary>
     /// Interaction logic for Window1.xaml
     /// </summary>
+    /// 
     public partial class Window1 : System.Windows.Window
     {
         private readonly IWavePlayer Song = new WaveOutEvent();
