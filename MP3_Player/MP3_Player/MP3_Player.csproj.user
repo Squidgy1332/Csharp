@@ -10,7 +10,7 @@
     <Compile Update="EditData.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Window1.xaml.cs">
+    <Compile Update="Start_Stop.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -18,10 +18,7 @@
     <Page Update="EditData.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="MainWindow.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Window1.xaml">
+    <Page Update="Start_Stop.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
