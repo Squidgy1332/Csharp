@@ -518,23 +518,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\W0469100\\.nuget\\packages\\": {},
+    "C:\\Users\\liamp\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\W0469100\\Documents\\GitHub\\Csharp\\MP3_Player\\MP3_Player\\MP3_Player.csproj",
+      "projectUniqueName": "C:\\Users\\liamp\\GitHub\\Csharp\\MP3_Player\\MP3_Player\\MP3_Player.csproj",
       "projectName": "MP3_Player",
-      "projectPath": "C:\\Users\\W0469100\\Documents\\GitHub\\Csharp\\MP3_Player\\MP3_Player\\MP3_Player.csproj",
-      "packagesPath": "C:\\Users\\W0469100\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\W0469100\\Documents\\GitHub\\Csharp\\MP3_Player\\MP3_Player\\obj\\",
+      "projectPath": "C:\\Users\\liamp\\GitHub\\Csharp\\MP3_Player\\MP3_Player\\MP3_Player.csproj",
+      "packagesPath": "C:\\Users\\liamp\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\liamp\\GitHub\\Csharp\\MP3_Player\\MP3_Player\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\W0469100\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\liamp\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -543,7 +543,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -556,6 +555,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -590,7 +594,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

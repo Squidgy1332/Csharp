@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\W0469100\Documents\GitHub\Csharp\MP3_Player\MP3_Player\obj\Debug\net8.0-windows\
+C:\Users\liamp\GitHub\Csharp\MP3_Player\MP3_Player\obj\Debug\net8.0-windows\
 MP3_Player
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
-C:\Users\W0469100\Documents\GitHub\Csharp\MP3_Player\MP3_Player\App.xaml
-21591749929
+C:\Users\liamp\GitHub\Csharp\MP3_Player\MP3_Player\App.xaml
+4-1764683535
 
-5969608034
-214-659810433
-EditData.xaml;MainWindow.xaml;
+8980832832
+214-1326364451
+DisplaySongData.xaml;EditData.xaml;ErrorWindow.xaml;MainWindow.xaml;
 
 False
 

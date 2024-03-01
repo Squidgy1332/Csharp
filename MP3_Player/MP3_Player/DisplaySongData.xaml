@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="MP3_Player.DisplaySongData"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MP3_Player"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Rectangle x:Name="BackDrop" HorizontalAlignment="Center" Height="330" Margin="0,46,0,0" Stroke="Black" VerticalAlignment="Top" Width="588" Fill="#4C259EDE"/>
+        <Label x:Name="ArtistLable" Content="Artist: " HorizontalAlignment="Left" Margin="144,74,0,0" VerticalAlignment="Top" Height="50" Width="87" FontSize="30" Foreground="White"/>
+        <Label x:Name="Artist" Content="" HorizontalAlignment="Left" Margin="248,74,0,0" VerticalAlignment="Top" Height="50" Width="424" FontSize="30" Foreground="White"/>
+        <Label x:Name="TitleLable" Content="Title: " HorizontalAlignment="Left" Margin="144,124,0,0" VerticalAlignment="Top" Height="50" Width="87" FontSize="30" Foreground="White"/>
+        <Label x:Name="AlbumLable" Content="Album: " HorizontalAlignment="Left" Margin="144,179,0,0" VerticalAlignment="Top" Height="50" Width="113" FontSize="30" Foreground="White"/>
+        <Label x:Name="YearLable" Content="Year:" HorizontalAlignment="Left" Margin="144,229,0,0" VerticalAlignment="Top" Height="50" Width="87" FontSize="30" Foreground="White"/>
+        <Label x:Name="GenraLable" Content="Genre:" HorizontalAlignment="Left" Margin="144,284,0,0" VerticalAlignment="Top" Height="50" Width="102" FontSize="30" Foreground="White"/>
+        <Label x:Name="Title" Content="" HorizontalAlignment="Left" Margin="248,129,0,0" VerticalAlignment="Top" Height="50" Width="424" FontSize="30" Foreground="White"/>
+        <Label x:Name="Album" Content="" HorizontalAlignment="Left" Margin="257,184,0,0" VerticalAlignment="Top" Height="50" Width="424" FontSize="30" Foreground="White"/>
+        <Label x:Name="Year" Content="" HorizontalAlignment="Left" Margin="236,234,0,0" VerticalAlignment="Top" Height="50" Width="424" FontSize="30" Foreground="White"/>
+        <Label x:Name="Genre" Content="" HorizontalAlignment="Left" Margin="246,289,0,0" VerticalAlignment="Top" Height="50" Width="424" FontSize="30" Foreground="White"/>
+        <Button Content="Close" HorizontalAlignment="Left" Margin="621,54,0,0" VerticalAlignment="Top" Width="60" Click="Button_Click"/>
+
+    </Grid>
+</UserControl>

@@ -11,15 +11,21 @@
             <ColumnDefinition Width="9*"/>
             <ColumnDefinition Width="71*"/>
         </Grid.ColumnDefinitions>
-        <TextBox x:Name="SongF" HorizontalAlignment="Left" Margin="49,83,0,0" TextWrapping="Wrap" Text="Song" VerticalAlignment="Top" Width="146" Grid.ColumnSpan="2" TextChanged="SongF_TextChanged"/>
+        <TextBox x:Name="SongF" HorizontalAlignment="Left" Margin="49,83,0,0" TextWrapping="Wrap" Text="Song" VerticalAlignment="Top" Width="146" Grid.ColumnSpan="2"/>
         <Label Content="Song Title" HorizontalAlignment="Left" Margin="49,57,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="ArtistF" HorizontalAlignment="Left" Margin="166,83,0,0" TextWrapping="Wrap" Text="Artist" VerticalAlignment="Top" Width="120" Grid.Column="1" TextChanged="ArtistF_TextChanged"/>
+        <TextBox x:Name="ArtistF" HorizontalAlignment="Left" Margin="166,83,0,0" TextWrapping="Wrap" Text="Artist" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
         <Label Content="Artist Name" HorizontalAlignment="Left" Margin="166,57,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-        <TextBox x:Name="AlbumF" HorizontalAlignment="Left" Margin="329,83,0,0" TextWrapping="Wrap" Text="Album" VerticalAlignment="Top" Width="120" TextChanged="AlbumF_TextChanged" Grid.Column="1"/>
+        <TextBox x:Name="AlbumF" HorizontalAlignment="Left" Margin="329,83,0,0" TextWrapping="Wrap" Text="Album" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
         <Label Content="Album Name" HorizontalAlignment="Left" Margin="329,57,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-        <DatePicker x:Name="DateF" HorizontalAlignment="Left" Margin="49,150,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" DataContextChanged="DateF_Changed"/>
-        <Label Content="release date " HorizontalAlignment="Left" Margin="49,119,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
-        <Button x:Name="EditBtn" Grid.Column="1" Content="Change song data" HorizontalAlignment="Left" Margin="126,150,0,0" VerticalAlignment="Top" Click="EditBtn_Click"/>
-
+        <Label Content="Release Year " HorizontalAlignment="Left" Margin="49,119,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <Button x:Name="EditBtn" Grid.Column="1" Content="Change song data" HorizontalAlignment="Left" Margin="467,196,0,0" VerticalAlignment="Top" Click="EditBtn_Click" RenderTransformOrigin="0.03,0.491"/>
+        <TextBox x:Name="GenreF" HorizontalAlignment="Left" Margin="166,153,0,0" TextWrapping="Wrap" Text="Genre" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+        <Label Content="Genre" HorizontalAlignment="Left" Margin="166,127,0,0" VerticalAlignment="Top" Grid.Column="1" Width="47"/>
+        <TextBox x:Name="DateF" HorizontalAlignment="Left" Margin="49,150,0,0" TextWrapping="Wrap" Text="Year" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+        <Label x:Name="ChnageMes" Visibility="Hidden" Grid.Column="1" Content="Data was changed" HorizontalAlignment="Left" Margin="467,159,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.106,0.025" Width="100"/>
+        <Label Content="Cover" HorizontalAlignment="Left" Margin="49,190,0,0" VerticalAlignment="Top" Width="47" Grid.ColumnSpan="2"/>
+        <Label Content="Genre" HorizontalAlignment="Left" Margin="166,127,0,0" VerticalAlignment="Top" Grid.Column="1" Width="47"/>
+        <TextBox x:Name="F_Path" HorizontalAlignment="Left" Margin="19,196,0,0" TextWrapping="Wrap" Text="File Path" VerticalAlignment="Top" Width="267" Grid.Column="1"/>
+        <Button x:Name="BrowseF" Grid.Column="1" Content="..." HorizontalAlignment="Left" Margin="303,194,0,0" VerticalAlignment="Top" Click="FBrowser_Click" RenderTransformOrigin="0.03,0.491" Height="21" Width="28"/>
     </Grid>
 </Window>

@@ -12,8 +12,8 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\W0469100\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\W0469100\\.nuget\\packages",
+      "C:\\Users\\liamp\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\liamp\\.nuget\\packages",
       "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
     ],
     "configProperties": {

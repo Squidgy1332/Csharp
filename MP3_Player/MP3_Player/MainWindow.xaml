@@ -3,19 +3,32 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:controls="clr-namespace:Start_Stop"
         xmlns:local="clr-namespace:MP3_Player"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="476" Width="839">
     <Window.CommandBindings>
         <CommandBinding Command="MediaCommands.Play" Executed="PlaySong"/>
         <CommandBinding Command="MediaCommands.Stop" Executed="StopSong"/>
+        <CommandBinding Command="ApplicationCommands.Open" Executed="LunchEditPage"/>
+        <CommandBinding Command="EditingCommands.TabForward" Executed="ShowSongData"/>
     </Window.CommandBindings>
-    <Grid>
-        <Button x:Name="FBrowse" Content="..." HorizontalAlignment="Left" Margin="353,60,0,0" VerticalAlignment="Top" Width="47" Click="FBrowser_Click"/>
-        <Label x:Name="Find_FileL" Content="Select a MP3 file" HorizontalAlignment="Left" Margin="202,35,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="F_Path" HorizontalAlignment="Left" Margin="202,66,0,0" Text="FilePath" VerticalAlignment="Top" Width="120" TextChanged="F_Path_TextChanged" IsEnabled="False"/>
-        <Button x:Name="EditB" Content="Edit Data" HorizontalAlignment="Left" Margin="507,354,0,0" VerticalAlignment="Top" Width="66"/>
-        <Image x:Name="Img" HorizontalAlignment="Left" Height="204" Margin="202,106,0,0" VerticalAlignment="Top" Width="343"/>
+    <Grid Margin="0,0,0,-6">
+        <Image x:Name="Img" Source="{Binding Cover}" HorizontalAlignment="Left" Height="203" Margin="170,105,0,0" VerticalAlignment="Top" Width="449"/>
+        <Button x:Name="PlayB" Content="Play" HorizontalAlignment="Left" Margin="218,354,0,0" VerticalAlignment="Top" Width="66" Command="MediaCommands.Play"/>
+        <Button x:Name="StopB" Content="Stop" HorizontalAlignment="Left" Margin="353,354,0,0" VerticalAlignment="Top" Width="66" Command="MediaCommands.Stop"/>
+        <Button x:Name="FBrowse" Content="..." HorizontalAlignment="Left" Margin="459,73,0,0" VerticalAlignment="Top" Width="47" Click="FBrowser_Click"/>
+        <Label x:Name="Find_FileL" Content="Select a MP3 file" HorizontalAlignment="Left" Margin="308,48,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="F_Path" HorizontalAlignment="Left" Margin="308,79,0,0" Text="FilePath" VerticalAlignment="Top" Width="120" TextChanged="F_Path_TextChanged" IsEnabled="False"/>
+        <Button x:Name="DisplayData" Content="Song Data" HorizontalAlignment="Left" Margin="601,354,0,0" VerticalAlignment="Top" Width="66" Command="EditingCommands.TabForward" />
+        <Button x:Name="EditB" Content="Edit Data" HorizontalAlignment="Left" Margin="507,354,0,0" VerticalAlignment="Top" Width="66" Command="ApplicationCommands.Open"/>
+        <local:DisplaySongData x:Name="DisplaySongData" Visibility="Hidden"/>
+        <Menu Margin="5,0,10,423">
+            <MenuItem Header="ToolBar" Height="22" Width="80">
+                <MenuItem Header="Play" Name="MenuPlay" Command="MediaCommands.Play" />
+                <MenuItem Header="Stop" Command="MediaCommands.Stop" />
+                <MenuItem Header="Info" Command="EditingCommands.TabForward" />
+                <MenuItem Header="Edit" Command="ApplicationCommands.Open" />
+            </MenuItem>
+        </Menu>
     </Grid>
 </Window>

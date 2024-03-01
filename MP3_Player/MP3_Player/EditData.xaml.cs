@@ -1,6 +1,10 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using NAudio.Wave;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -19,36 +23,57 @@ namespace MP3_Player
     /// </summary>
     public partial class EditData : Window
     {
-        TagLib.File CurrentFile;
-        public EditData(string song)
+        public SongData songData;
+        private MainWindow mainWindow;
+        private OpenFileDialog FileExplorer = new OpenFileDialog();
+        public EditData(SongData song, MainWindow Window)
         {
             InitializeComponent();
-            CurrentFile = TagLib.File.Create(song);
+            songData = song;
+            mainWindow = Window;
+            SetCurrentData();
         }
 
-        private void ArtistF_TextChanged(object sender, TextChangedEventArgs e)
+        private void SetCurrentData()
         {
-
+            SongF.Text = songData.GetTitle();
+            ArtistF.Text = songData.GetArtist();
+            AlbumF.Text = songData.GetAlbum();
+            DateF.Text = songData.GetYear();
+            GenreF.Text = songData.GetGenra();
         }
-
-        private void SongF_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void AlbumF_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void DateF_Changed(object sender, DependencyPropertyChangedEventArgs e)
-        {
-
-        }
-
         private void EditBtn_Click(object sender, RoutedEventArgs e)
         {
+            songData.SetTitle(SongF.Text);
+            songData.SetAlbum(AlbumF.Text);
+            songData.SetGenra(GenreF.Text);
+            songData.SetArtist(ArtistF.Text);
+            songData.SetYear(DateF.Text);
 
+            mainWindow.ResetSong(F_Path.Text);
+
+            ChnageMes.Visibility = Visibility.Visible;
+            
+        }
+        private void FBrowser_Click(object sender, RoutedEventArgs e)
+        {
+            FileExplorer.Filter = "png Files|*.png";
+
+            // Open up the users home directory when opened
+            FileExplorer.InitialDirectory = System.Environment.GetEnvironmentVariable("USERPROFILE");
+            FileExplorer.ShowDialog();
+
+            if (FileExplorer.CheckFileExists && FileExplorer.CheckPathExists && FileExplorer.FileName != "")
+            {
+                F_Path.Text = FileExplorer.FileName;
+
+                using (WebClient webClient = new WebClient())
+                {
+                    // Download the image from the URL as a byte array
+                    byte[] imageData = webClient.DownloadData(FileExplorer.FileName);
+                    songData.SetImage(imageData);
+                }
+            }
         }
     }
 }
