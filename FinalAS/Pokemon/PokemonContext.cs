@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Pomelo.EntityFrameworkCore.MySql.Scaffolding.Internal;
 
-namespace Pokemon;
+namespace PokemonDB;
 
 public partial class PokemonContext : DbContext
 {
@@ -18,7 +18,7 @@ public partial class PokemonContext : DbContext
 
     public virtual DbSet<Ability> Abilities { get; set; }
 
-    public virtual DbSet<Pokemon> Pokemons { get; set; }
+    public virtual DbSet<Pokemon> Pokemon { get; set; }
 
     public virtual DbSet<PokemonAbility> PokemonAbilities { get; set; }
 
