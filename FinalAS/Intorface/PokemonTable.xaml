@@ -1,0 +1,20 @@
+﻿<Window x:Class="Intorface.PokemonTable"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Intorface"
+        mc:Ignorable="d"
+        Title="PokemonTable" Height="450" Width="800">
+    <Grid>
+        <DataGrid x:Name="pokemonTable" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="36,49,36,19"/>
+        <Button x:Name="Back" Content="Back" HorizontalAlignment="Left" Margin="36,10,0,0" VerticalAlignment="Top" Width="68" Click="Back_Click"/>
+        <StatusBar Margin="0,366,0,0" Grid.ColumnSpan="2">
+            <StatusBarItem>
+                <Label x:Name="SB_L" Content="RowCount: " Height="30" Width="90"/>
+            </StatusBarItem>
+            <TextBlock x:Name="SB_Data"/>
+            <StatusBarItem/>
+        </StatusBar>
+    </Grid>
+</Window>

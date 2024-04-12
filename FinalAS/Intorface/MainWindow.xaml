@@ -12,22 +12,34 @@
             <ColumnDefinition Width="69*"/>
         </Grid.ColumnDefinitions>
         <ListBox x:Name="PokemonName" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="64,118,279,48" SelectionChanged="ListBox_SelectionChanged"/>
-        <ComboBox x:Name="SearchBox" HorizontalAlignment="Left" Margin="60,68,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged"/>
+        <ComboBox x:Name="SearchBox" HorizontalAlignment="Left" Margin="64,76,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged">
+        </ComboBox>
         <Label Content="Lookup By:" HorizontalAlignment="Left" Height="27" Margin="60,36,0,0" VerticalAlignment="Top" Width="130"/>
-        <TextBlock x:Name="Name" HorizontalAlignment="Left" Margin="312,122,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="70" Height="21"/>
         <Label x:Name="Name_L" Content="Name" HorizontalAlignment="Left" Margin="312,92,0,0" VerticalAlignment="Top" Height="25" Width="52"/>
         <TextBlock x:Name="ID" HorizontalAlignment="Left" Margin="228,122,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="50" Height="21"/>
         <Label x:Name="ID_L" Content="ID" HorizontalAlignment="Left" Margin="226,92,0,0" VerticalAlignment="Top" Height="25" Width="52"/>
-        <Label x:Name="T1_L" Content="Type 1" HorizontalAlignment="Left" Margin="403,92,0,0" VerticalAlignment="Top" Height="25" Width="52"/>
+        <Label x:Name="T1_L" Content="Type 1" HorizontalAlignment="Left" Margin="421,90,0,0" VerticalAlignment="Top" Height="25" Width="52" Grid.ColumnSpan="2"/>
         <Label x:Name="A1_L" Content="Ability 1" HorizontalAlignment="Left" Margin="228,174,0,0" VerticalAlignment="Top" Height="25" Width="52"/>
-        <Label x:Name="A2_L" Content="Ability 2" HorizontalAlignment="Left" Margin="356,174,0,0" VerticalAlignment="Top" Height="25" Width="52"/>
+        <Label x:Name="A2_L" Content="Ability 2" HorizontalAlignment="Left" Margin="417,174,0,0" VerticalAlignment="Top" Height="25" Width="52" Grid.ColumnSpan="2"/>
         <Label x:Name="HA_L" Content="Hidden ability" HorizontalAlignment="Left" Margin="228,252,0,0" VerticalAlignment="Top" Height="25" Width="110"/>
-        <TextBlock x:Name="Type1" HorizontalAlignment="Left" Margin="403,120,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="70" Height="21" Grid.ColumnSpan="2"/>
-        <TextBlock x:Name="Type2" HorizontalAlignment="Left" Margin="47,122,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="70" Height="21" Grid.Column="1"/>
-        <TextBlock x:Name="Ability1" HorizontalAlignment="Left" Margin="228,0,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Center" Width="70" Height="21"/>
-        <TextBlock x:Name="Ability2" HorizontalAlignment="Left" Margin="359,0,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Center" Width="70" Height="21"/>
-        <TextBlock x:Name="HA" HorizontalAlignment="Left" Margin="228,282,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="70" Height="21"/>
-        <Label x:Name="T2_L" Content="Type 2" HorizontalAlignment="Left" Margin="47,92,0,0" VerticalAlignment="Top" Height="25" Width="52" Grid.Column="1"/>
-        <DataGrid x:Name="PokemonTable" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.ColumnSpan="2" Margin="226,68,53,48" SelectionChanged="Pokemon_SelectionChanged"/>
+        <Label x:Name="T2_L" Content="Type 2" HorizontalAlignment="Left" Margin="115,90,0,0" VerticalAlignment="Top" Height="25" Width="52" Grid.Column="1"/>
+        <DataGrid x:Name="PokemonTable" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.ColumnSpan="2" Margin="226,68,53,48" SelectionChanged="Pokemon_SelectionChanged" Visibility="Hidden"/>
+        <Button x:Name="PokemonBut" Grid.Column="1" Content="View Pokemon" HorizontalAlignment="Center" Margin="0,35,0,0" VerticalAlignment="Top" Width="100" Click="Button_Click"/>
+        <StatusBar Margin="0,366,0,0" Grid.ColumnSpan="2">
+            <StatusBarItem>
+                <Label x:Name="SB_L" Content="RowCount: " Height="30" Width="90"/>
+            </StatusBarItem>
+            <TextBlock x:Name="SB_Data"/>
+            <StatusBarItem/>
+        </StatusBar>
+        <RadioButton x:Name="Edit_R" Content="Edit Pokemon" HorizontalAlignment="Left" Margin="253,64,0,0" VerticalAlignment="Top" Checked="Edit_R_Checked" IsChecked="True"/>
+        <RadioButton x:Name="View_R" Content="View Pokemon" HorizontalAlignment="Left" Margin="352,64,0,0" VerticalAlignment="Top" Width="103" IsChecked="True" Checked="View_R_Checked"/>
+        <Button x:Name="Save" Content="Save Changs" HorizontalAlignment="Left" Margin="350,319,0,0" VerticalAlignment="Top" Width="88" Click="Save_Click"/>
+        <TextBox x:Name="Name" HorizontalAlignment="Left" Margin="312,122,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="101" IsEnabled="False"/>
+        <ComboBox x:Name="Type1" HorizontalAlignment="Left" Margin="421,120,0,0" VerticalAlignment="Top" Width="96" SelectionChanged="Form" Grid.ColumnSpan="2" IsReadOnly="True" IsEnabled="False"/>
+        <ComboBox x:Name="Type2" Margin="115,118,134,0" VerticalAlignment="Top" SelectionChanged="Form" Grid.Column="1" IsReadOnly="True" IsEnabled="False"/>
+        <ComboBox x:Name="Ability1" HorizontalAlignment="Left" Margin="228,0,0,0" VerticalAlignment="Center" Width="120" SelectionChanged="Form" IsReadOnly="True" IsEnabled="False"/>
+        <ComboBox x:Name="Ability2" HorizontalAlignment="Left" Margin="421,0,0,0" VerticalAlignment="Center" Width="120" SelectionChanged="Form" Grid.ColumnSpan="2" IsReadOnly="True" IsEnabled="False"/>
+        <TextBox x:Name="HA" HorizontalAlignment="Left" Margin="239,282,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
     </Grid>
 </Window>
