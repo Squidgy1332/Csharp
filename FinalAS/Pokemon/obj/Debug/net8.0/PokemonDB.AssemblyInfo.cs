@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PokemonDB")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f7d30fd976905149870d89d063a5ec54c2446bcb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9c1bcf1643c5d18c618b1f069cb7c4adff71067b")]
 [assembly: System.Reflection.AssemblyProductAttribute("PokemonDB")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PokemonDB")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

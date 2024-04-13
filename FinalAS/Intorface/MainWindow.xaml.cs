@@ -2,8 +2,12 @@
 using System.Data;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Forms;
-
+/**
+ * Auther: Liam Morton
+ * Date: 2024-04-13
+ * File: MainWindow.cs
+ * Purpose: To display and search for pokemon by Name,Type, and Ability as well as edit pokemon data
+ */
 namespace Intorface
 {
     /// <summary>
@@ -21,28 +25,32 @@ namespace Intorface
         {
             InitializeComponent();
             
+            //conect to db
             context = new PokemonContext();
+
+            //make search bt drop down
             string[] items = { "Name", "Type", "Ability" };
             pokemontable = new List<PokemonTableRow>();
-
             foreach (string item in items)
             {
                 SearchBox.Items.Add(item);
             }
 
+            //make pokemon name list
             SearchBox.SelectedIndex = 0;
             pokemons = (from a in context.Pokemon select a.Name).ToList(); 
             PokemonName.ItemsSource = pokemons;
             PokemonData(false);
             PokemonTable.Visibility = Visibility.Hidden;
 
+            //make pokemon ability list
             PokemonAbilitys = new List<String>();
             PokemonAbilitys = (from a in context.Abilities select a.Name).ToList();
             Ability1.ItemsSource = PokemonAbilitys;
             PokemonAbilitys.Add("None");
             Ability2.ItemsSource = PokemonAbilitys;
             
-
+            //make pokemon type list
             PokemonTypes = new List<String>();
             PokemonTypes = (from a in context.Types select a.Name).ToList();
             Type1.ItemsSource = PokemonTypes;
@@ -50,6 +58,7 @@ namespace Intorface
             Type2.ItemsSource = PokemonTypes;
         }
 
+        //fill data grid for searching by type
         private void MakeColumnsType(string type)
         {
             PokemonTable.ItemsSource = null;
@@ -74,6 +83,7 @@ namespace Intorface
             PokemonTable.ItemsSource = pokemontable;
         }
 
+        //fill data grid for searching by ability
         private void MakeColumnsAbility(string ability)
         {
             PokemonTable.ItemsSource = null;
@@ -98,6 +108,7 @@ namespace Intorface
             PokemonTable.ItemsSource = pokemontable;
         }
         
+        //display or hide form data
         private void PokemonData(bool state)
         {
             if (state)
@@ -141,6 +152,8 @@ namespace Intorface
             }
             
         }
+
+        //display data based on search selection
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             try
@@ -210,6 +223,7 @@ namespace Intorface
             }
         }
 
+        //edit list of type,abilitys or names based on combo box selection
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             switch (SearchBox.SelectedItem.ToString())
@@ -233,17 +247,56 @@ namespace Intorface
 
         private void Pokemon_SelectionChanged(object sender, SelectionChangedEventArgs e){}
 
+        //load pokemon table window
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             PokemonTable NewWin = new PokemonTable();
             NewWin.Show();
         }
 
+        //upadte pokemon data
         private void Save_Click(object sender, RoutedEventArgs e)
         {
 
+            try { 
+                if (PokemonName.SelectedItem != null) {
+                    string selectedType1 = Type1.SelectedItem.ToString();
+                    string NewName = Name.Text; string NewHA = HA.Text;
+                    string selectedType2 = Type2.SelectedItem.ToString();
+                    string selectedAbility1 = Ability1.SelectedItem.ToString();
+                    string selectedAbility2 = Ability2.SelectedItem.ToString();
+                    string selectedItem = PokemonName.SelectedItem.ToString();
+                    var data = context.Pokemon.Where(p => p.Name == selectedItem); 
+                    foreach (Pokemon p in data) { 
+                        if (NewName != "") { 
+                            p.Name = NewName; 
+                        } 
+                        if (selectedType1 != "None" || selectedType1 != null) { 
+                            p.Type1 = selectedType1; 
+                        } 
+                        if (selectedType2 != "None" || selectedType2 != null) { 
+                            p.Type2 = selectedType2; 
+                        } 
+                        if (selectedAbility1 != "None" || selectedAbility1 != null) { 
+                            p.Ability1 = selectedAbility1; 
+                        } 
+                        if (selectedAbility1 != "None" || selectedAbility1 != null) { 
+                            p.Ability2 = selectedAbility2; 
+                        } 
+                        if (NewHA != "" || NewHA != null) {
+                            p.HiddenAbility = NewHA; 
+                        } 
+                    } 
+                    context.SaveChanges();
+                    pokemons = (from a in context.Pokemon select a.Name).ToList();
+                    PokemonName.ItemsSource = pokemons;
+                } 
+            } catch (Exception ex) { 
+                Console.WriteLine(ex.ToString()); 
+            }
         }
 
+        //alow for editing of pokemon data
         private void Edit_R_Checked(object sender, RoutedEventArgs e){
             if (Save != null)
             {
@@ -258,6 +311,7 @@ namespace Intorface
 
         }
 
+        //remove ability to edit pokemon data
         private void View_R_Checked(object sender, RoutedEventArgs e){
             if(Save != null)
             {
